@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Zaakir Sheikh",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZSmaster1/arduino-bt.git"
+  },
+  "dependencies": {
+    "bluetooth-serial-port": "^2.2.7"
+  }
 }
