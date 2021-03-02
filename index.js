@@ -1,6 +1,12 @@
 const BTSerialPort = require('bluetooth-serial-port');
 const btSerial = new BTSerialPort.BluetoothSerialPort();
 
+const errFunction = (err) => {
+    if(err) {
+        console.log(err);
+    }
+}
+
 class Arduino {
 
     constructor(bluetooth_module_name) {
