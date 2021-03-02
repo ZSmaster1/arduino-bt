@@ -9,6 +9,9 @@ const errFunction = (err) => {
 
 class Arduino {
 
+    /**
+     * @param { String } bluetooth_module_name - The bluetooth module device name
+     */
     constructor(bluetooth_module_name) {
         this.dname = bluetooth_module_name.toLowerCase();
     }
@@ -35,13 +38,18 @@ class Arduino {
 
         return this;
     }
-
+    /**
+     * @param { String } data the data that is going to be sent to the arduino 
+     */
     send(data) {
         btSerial.write(Buffer.from(`${data}`), errFunction);
 
         return this;
     }
 
+    /**
+     * @callback that the arduino sent 
+     */
     onDataReceive(callback) {
         btSerial.on('data', function(bufferData) {
             const data = Buffer.from(bufferData).toString();
