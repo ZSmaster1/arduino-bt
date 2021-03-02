@@ -1,6 +1,6 @@
 {
   "name": "arduino-bt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A npm package to connect nodeJS with arduino via bluetooth",
   "main": "index.js",
   "author": "Zaakir Sheikh",
