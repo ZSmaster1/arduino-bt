@@ -7,7 +7,7 @@ npm install arduino-bt
 ## nodeJS (.js)
 ```js
 const arduino_bt = require('arduino-bt');
-const arduino = new arduino-bt('hc-05');
+const arduino = new arduino_bt('hc-05');
 
 //connect to the arduino
 arduino.setup();
