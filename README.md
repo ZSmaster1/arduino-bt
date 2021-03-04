@@ -5,9 +5,10 @@ npm install arduino-bt
 
 # Example usage
 ## nodeJS (.js)
+#### Make sure your bluetooth module is connected to your computer so it connect
 ```js
 const arduino_bt = require('arduino-bt');
-const arduino = new arduino_bt('hc-05');
+const arduino = new arduino_bt('hc-05'); //replace hc-05 with your bluetooth device name
 
 //connect to the arduino
 arduino.setup();
@@ -34,6 +35,7 @@ SoftwareSerial BTserial(10, 11);
 
 void setup() {
     BTserial.begin(9600);
+    Serial.begin(9600)
 }
 
 void loop() {
@@ -41,6 +43,6 @@ void loop() {
     BTserial.print('1');
 
     //read the sent data from the nodeJS server
-    String data = BTserial.readStringUntil('\n');
+    Serial.println(BTserial.readStringUntil('\n'));
 }
 ```
