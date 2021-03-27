@@ -13,15 +13,16 @@ class Arduino {
      * @param { String } bluetooth_module_name - The bluetooth module device name
      */
     constructor(bluetooth_module_name) {
-        this.dname = bluetooth_module_name.toLowerCase();
+        this.device_name = bluetooth_module_name;
     }
 
     setup() {
+        const dname = this.device_name;
         btSerial.on('found', function(address, name) {
   
-            if(name.toLowerCase().includes(this.dname)){
+            if(name === dname) {
         
-                console.log('connected to: ', name);
+                console.log('connected to: ', dname);
         
                 btSerial.findSerialPortChannel(address, function(channel) {
         
@@ -52,7 +53,7 @@ class Arduino {
      */
     onDataReceive(callback) {
         btSerial.on('data', function(bufferData) {
-            const data = Buffer.from(bufferData).toString();
+            const data = Buffer.from(bufferData).toString('utf-8');
             callback(data);  
         });
     }
